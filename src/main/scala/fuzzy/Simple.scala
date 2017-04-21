@@ -19,6 +19,8 @@ object Simple {
 
   val sc: SparkContext = SparkContext.getOrCreate(conf)
 
-  val companiNames: RDD[String] = sc.parallelize(Seq("Tesco", "TSB", "JT Coder"))
+  val companyNames: RDD[String] = sc.parallelize(Seq("Tesco", "TSB", "JT Coder"))
+  val myNames: RDD[String] = sc.parallelize(Seq("Tesco", "TSB", "JT Coder"))
 
+  val join = companyNames.map( c => (c,myNames))
 }
