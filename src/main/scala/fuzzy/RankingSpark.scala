@@ -21,6 +21,6 @@ class RankingSpark(data: List[String], kb: List[String]) {
     .cartesian(kownledgeBase)
     .map( e => (e._1,e._2, distance(e._1,e._2) ))
     .groupBy(_._1)
-    .map( e => (e._1, e._2.toList.sortBy(_._3)(Ordering[Double].reverse).take(1) ))
+    .map( e => (e._1, e._2.toList.sortBy(_._3)(Ordering[Double].reverse) ))
 
 }

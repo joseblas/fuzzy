@@ -11,20 +11,17 @@ object App {
     val data = Source.fromFile("/Users/jta/coursera/fuzzy/src/main/resources/samples/companytestlist.csv").getLines().toList
     val fste = Source.fromFile("/Users/jta/coursera/fuzzy/src/main/resources/samples/ftse100companies.csv").getLines().toList
 
-
-//    println(s" $data")
-//    println(s" $fste")
     val r = new RankingSpark(data, fste)
 //
     val toList = r.list
 
     val l = toList.collect().toList
 
-//  println(l)
-    l.foreach{ e=>
-        println(s" ${e._1} -> ${e._2}")
-
-    }
+  println(l)
+//    l.foreach{ e=>
+//        println(s" ${e._1} -> ${e._2}")
+//
+//    }
     r.sc.stop()
     sys.exit()
 //    toList

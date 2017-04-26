@@ -12,7 +12,9 @@ scalacOptions += "-feature"
 
 //crossScalaVersions := Seq("2.10.4", "2.11.2")
 
-mainClass := Some("fuzzy.Simple")
+//mainClass := Some("fuzzy.Simple")
+
+val akkaHttpVersion = "2.0.5"
 
 libraryDependencies ++= Seq(
   "org.apache.spark" %% "spark-core" % "1.6.3" excludeAll(
@@ -24,6 +26,8 @@ libraryDependencies ++= Seq(
     ExclusionRule("com.esotericsoftware.minlog", "minlog")
   ),
   "org.apache.commons" % "commons-lang3" % "3.5",
+  "com.typesafe.akka" %% "akka-http-experimental" % akkaHttpVersion,
+  "com.typesafe.akka" %% "akka-http-spray-json-experimental" % akkaHttpVersion,
   "org.scalatest" %% "scalatest" % "2.2.6" % "test",
   "org.scalacheck" %% "scalacheck" % "1.11.5" % "test",
   "junit" % "junit" % "4.10" % "test"
