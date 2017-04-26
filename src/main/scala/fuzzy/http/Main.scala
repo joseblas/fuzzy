@@ -3,16 +3,12 @@ package fuzzy.http
 import akka.actor.ActorSystem
 import akka.http.scaladsl.Http
 import akka.http.scaladsl.marshallers.sprayjson.SprayJsonSupport
-import akka.http.scaladsl.model.HttpRequest
 import akka.http.scaladsl.server.Directives._
 import akka.stream.ActorMaterializer
 import com.typesafe.config.ConfigFactory
 import fuzzy.RankingSpark
 import spray.json.DefaultJsonProtocol._
 
-import scala.io.Source
-
-case class MatchingRequest(kb: String, data: String)
 
 object Main extends App with SprayJsonSupport {
   val config = ConfigFactory.load()
