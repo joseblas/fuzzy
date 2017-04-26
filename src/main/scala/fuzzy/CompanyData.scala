@@ -73,7 +73,7 @@ object CompanyData {
   def cap(str: String) = str.split(" ").map(_.charAt(0).toUpper).mkString
 
   def getSpark(env: Env, name: String = "Fuzzy"): SparkConf = {
-    val environemtn = env match {
+     env match {
       case Local() =>
         new SparkConf()
           .setAppName(name)
@@ -84,8 +84,9 @@ object CompanyData {
           .setAppName(name)
           .setMaster("spark://localhost:7077")
           .set("spark.cores.max", "2")
-          .set("spark.driver.cores", "2")
-          .set("spark.driver.memory", "512M")
+//          .set("spark.driver.cores", "2")
+//          .set("spark.driver.memory", "512M")
+          .set("spark.testing.reservedMemory", "57425008")
           .set("spark.executor.memory", "512M")
 
           .setJars(Seq(
@@ -97,8 +98,6 @@ object CompanyData {
           )
           )
     }
-
-    environemtn
   }
 
 

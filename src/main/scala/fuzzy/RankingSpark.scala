@@ -10,7 +10,7 @@ import org.apache.spark.{SparkConf, SparkContext}
   */
 class RankingSpark(data: List[String], kb: List[String]) {
 
-  val conf: SparkConf = getSpark(Local(), "Fuzzy")
+  val conf: SparkConf = getSpark(Dse(), "Fuzzy")
 
   val sc: SparkContext = SparkContext.getOrCreate(conf)
 

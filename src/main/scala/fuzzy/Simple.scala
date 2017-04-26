@@ -6,12 +6,17 @@ import org.apache.spark.rdd.RDD
 /**
   * Created by jta on 21/04/2017.
   */
-object Simple  //extends App
+object Simple extends App
 {
   val conf: SparkConf = new SparkConf()
-    .setAppName("Fuzzy")
-    .setMaster("spark://127.0.0.1:7077")
+    .setAppName("Simple")
+    .setMaster("spark://localhost:7077")
+//    .setMaster("local[2]")
     .set("spark.cores.max", "2")
+    .set("spark.testing.reservedMemory", "57425008")
+//    .set("spark.driver.cores", "2")
+//    .set("spark.driver.memory", "256M")
+    .set("spark.executor.memory", "256M")
 
       .setJars(Seq(
         "/Users/jta/.ivy2/local/example/basic-project_2.10/0.1.0-SNAPSHOT/jars/basic-project_2.10.jar"
@@ -23,7 +28,7 @@ object Simple  //extends App
   val sc: SparkContext = SparkContext.getOrCreate(conf)
 
 
-  var NUM_SAMPLES: Int = 4
+  var NUM_SAMPLES: Int = 150000
 
   val join = sc.parallelize(1 to NUM_SAMPLES).filter { _ =>
     val x = math.random

@@ -11,7 +11,7 @@ class RankingSparkKb(data: List[String], kb: List[String]) {
 
   val dict = Map("limited" -> 1, "ltd" -> 1)
 
-  val conf: SparkConf = getSpark(Local(), "Fuzzy")
+  val conf: SparkConf = getSpark(Dse(), "Fuzzy")
 
   val sc: SparkContext = SparkContext.getOrCreate(conf)
 

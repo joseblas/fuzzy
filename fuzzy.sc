@@ -12,5 +12,4 @@ distance("GSK", "Glaxo-Smith Kline" )
 distance("GSK", "GlaxoSmithKline" )
 distance("GSK", "Glaxo" )
 
-
 distance("JT Coder Limited", "JT Coder Ltd")

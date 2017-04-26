@@ -12,7 +12,7 @@ scalacOptions += "-feature"
 
 //crossScalaVersions := Seq("2.10.4", "2.11.2")
 
-mainClass := Some("fuzzy.App")
+mainClass := Some("fuzzy.Simple")
 
 libraryDependencies ++= Seq(
   "org.apache.spark" %% "spark-core" % "1.6.3" excludeAll(
