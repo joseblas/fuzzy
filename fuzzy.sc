@@ -1,28 +1,16 @@
 import java.util.Locale
 
-import org.apache.commons.lang3.StringUtils._
+import fuzzy.CompanyData._
 
-getFuzzyDistance("British American Tobacco", "BAT", Locale.ENGLISH)
-getFuzzyDistance( "BAT","British American Tobacco", Locale.ENGLISH)
+distance("Goyal and Sons", "Goyal")
 
-//getFuzzyDistance("Barclays", "BAT", Locale.ENGLISH)
-//getFuzzyDistance( "BAT","Barclays", Locale.ENGLISH)
-val str = "Barclldddsafdasfdasfdddddddddd"
-str.length
-getFuzzyDistance( str,str, Locale.ENGLISH)
-valu(str)
-//getFuzzyDistance( "BAT","BAT", Locale.ENGLISH)
+distance("Glaxo-Smith Kline", "GSK")
+distance("GlaxoSmithKline", "GSK")
+distance("Glaxo", "GSK")
 
-getJaroWinklerDistance("BAT", "British American Tobacco")
-getJaroWinklerDistance("British American Tobacco", "BAT")
-
-//"British American Tobacco".split(" ").map(_.charAt(0).toUpper).mkString
+distance("GSK", "Glaxo-Smith Kline" )
+distance("GSK", "GlaxoSmithKline" )
+distance("GSK", "Glaxo" )
 
 
-
-def valu(str: String) = str.length * 3 - 2
-
-def value(str:String): Int = str match {
-  case x if x.length == 1 => 1
-  case x => 3 + value(x.substring(1))
-}
+distance("JT Coder Limited", "JT Coder Ltd")

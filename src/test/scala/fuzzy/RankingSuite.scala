@@ -23,8 +23,8 @@ class RankingSuite extends FunSuite with BeforeAndAfterAll {
   override def afterAll(): Unit = {
 
     assert(init(), msg)
-    import fuzzy.Ranking._
-    sc.stop()
+//    import fuzzy.Ranking._
+//    sc.stop()
   }
 
 
@@ -35,7 +35,7 @@ class RankingSuite extends FunSuite with BeforeAndAfterAll {
 
 //    val joins = join(testCompanies, fste)
 //    println(initialList.collect().toList)
-    println(testCompanies.map( c => (c)).collect() )
+//    println(testCompanies.map( c => (c)).collect() )
 //    println(testCompanies.collect())
 //    println(fste.size)
 //          .foreach { company =>
