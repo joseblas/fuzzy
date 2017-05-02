@@ -83,6 +83,7 @@ object CompanyData {
         new SparkConf()
           .setAppName(name)
           .setMaster("spark://localhost:7077")
+//          .setMaster("spark://192.168.225.49:7077")
           .set("spark.cores.max", "2")
 //          .set("spark.driver.cores", "2")
 //          .set("spark.driver.memory", "512M")
@@ -90,13 +91,11 @@ object CompanyData {
           .set("spark.executor.memory", "512M")
 
           .setJars(Seq(
-            //            "/Users/jta/.ivy2/local/example/basic-project_2.10/0.1.0-SNAPSHOT/jars/basic-project_2.10.jar",
-            //            "/Users/jta/.ivy2/cache/org.apache.spark/spark-core_2.10/jars/spark-core_2.10-1.6.3.jar",
-            "/Users/jta/.ivy2/local/example/basic-project_2.10/0.1.0-SNAPSHOT/jars/basic-project_2.10.jar"
-            //            "/Users/jta/.ivy2/cache/org.apache.commons/commons-lang3/jars/commons-lang3-3.5.jar"
 
+            "/Users/jta/.ivy2/local/example/basic-project_2.11/0.1.0-SNAPSHOT/jars/basic-project_2.11.jar"
           )
           )
+
     }
   }
 

@@ -14,6 +14,7 @@ class RankingSpark(data: List[String], kb: List[String]) {
 
   val sc: SparkContext = SparkContext.getOrCreate(conf)
 
+
   val kownledgeBase: RDD[String] = sc.parallelize(kb)
   val fste = sc.parallelize(data)
 
